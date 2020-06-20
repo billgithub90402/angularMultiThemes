@@ -1,0 +1,35 @@
+<div class="container">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Favorite knife</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+    <div class="row">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Favorite knives</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let knife of knives" [value]="knife.value">
+              {{knife.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Brands</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let brand of brands" [value]="brand.value">
+              {{brand.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

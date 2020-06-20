@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './theme.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularMultiThemes';
+  title = 'Angular Multi Themes';
+  constructor(private themeService: ThemeService) { }
+
+  toggleDarkTheme(checked: boolean) {
+    this.themeService.setDarkTheme(checked);
+  }
 }
