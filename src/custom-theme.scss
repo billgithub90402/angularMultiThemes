@@ -30,7 +30,7 @@ $angularMultiThemes-theme: mat-light-theme(
 @include angular-material-theme($angularMultiThemes-theme);
 
 .pink-theme {
-  background-color: mat-color($mat-pink, 100);
+  background-color: mat-color($mat-red, 100);
   $pink-primary: mat-palette($mat-teal);
   $pink-accent: mat-palette($mat-blue, 300, 500, 800);
   $pink-warn: mat-palette($mat-green);
