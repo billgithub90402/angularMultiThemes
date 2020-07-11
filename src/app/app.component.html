@@ -2,7 +2,7 @@
   <div>
     <mat-toolbar>
       <mat-toolbar-row>
-        <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)">dark
+        <mat-slide-toggle [checked]="themeService.isDarkTheme | async" (change)="toggleDarkTheme($event.checked)">dark
         </mat-slide-toggle>
       </mat-toolbar-row>
     </mat-toolbar>

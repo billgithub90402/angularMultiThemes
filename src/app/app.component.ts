@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class AppComponent {
   title = 'Angular Multi Themes';
-  constructor(private themeService: ThemeService) { }
+  constructor(public themeService: ThemeService) { }
 
   toggleDarkTheme(checked: boolean) {
     this.themeService.setDarkTheme(checked);
