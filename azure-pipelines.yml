@@ -2,6 +2,16 @@
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+resources:
+  repositories:
+  - repository: MyGitHubRepo # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: MyGitHubServiceConnection
+    name: MyGitHubOrgOrUser/MyGitHubRepo
+  - repository: MyBitBucketRepo
+    type: github
+    endpoint: MyBitBucketServiceConnection
+    name: MyBitBucketOrgOrUser/MyBitBucketRepo
 
 trigger:
 - master
@@ -10,6 +20,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- checkout: self
+- checkout: MyGitHubRepo
+- checkout: MyBitBucketRepo
+- checkout: MyAzureReposGitRepository
+
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
