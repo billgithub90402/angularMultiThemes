@@ -4,14 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 resources:
   repositories:
-  - repository: MyGitHubRepo # The name used to reference this repository in the checkout step
+  - repository: multiChecks
     type: github
-    endpoint: MyGitHubServiceConnection
-    name: MyGitHubOrgOrUser/MyGitHubRepo
-  - repository: MyBitBucketRepo
-    type: github
-    endpoint: MyBitBucketServiceConnection
-    name: MyBitBucketOrgOrUser/MyBitBucketRepo
+    endpoint: https://github.com/billgithub90402/multiChecks.git
+    name: billgithub90402/multiChecks
 
 trigger:
 - master
@@ -21,9 +17,7 @@ pool:
 
 steps:
 - checkout: self
-- checkout: MyGitHubRepo
-- checkout: MyBitBucketRepo
-- checkout: MyAzureReposGitRepository
+- checkout: multiChecks
 
 - task: NodeTool@0
   inputs:
