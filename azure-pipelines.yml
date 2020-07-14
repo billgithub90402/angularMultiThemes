@@ -6,7 +6,7 @@ resources:
   repositories:
   - repository: multiChecks
     type: github
-    endpoint: https://github.com/billgithub90402/multiChecks.git
+    endpoint: github.com/billgithub90402/multiChecks
     name: billgithub90402/multiChecks
 
 trigger:
